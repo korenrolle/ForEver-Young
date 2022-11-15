@@ -9,5 +9,13 @@ if player one something it will automatically be added to the amount they alread
 the player will be able to keep playing the game and the calculation for the pay table will keep caculating
 
 ##Psuedo Code
+Load the start screen on some type of background with the game in the middle.
+There will be a start button that when click will allow you to interact with the game.
+the game will be housed in a css build
+There will be a button for payout, a button for spin, a button for paytable , and a bet max
+If you click the button for payout a box will pop up that says $xxxxx amount will be sent to your account, Thank you for playing
+If you click the spin button it will trigger the screen to spin
+If you click the paytable it will show you which ways you can win(maybe a prompt)
+If you click max it will jump to the max amount you can bet for the game
 
 ![IMG_2935](https://user-images.githubusercontent.com/115126618/201924598-6f821b2d-4042-47cb-8315-6b042ffa08f5.jpg)
