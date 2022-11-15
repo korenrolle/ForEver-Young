@@ -1,4 +1,4 @@
-# Project-game
+# Forever Young
 
 #User stories
 Use will be brought to the home screen where they will see the slot machine and a button that says play
@@ -18,4 +18,12 @@ If you click the spin button it will trigger the screen to spin
 If you click the paytable it will show you which ways you can win(maybe a prompt)
 If you click max it will jump to the max amount you can bet for the game
 
+
+Slot Machine Build
 ![IMG_2935](https://user-images.githubusercontent.com/115126618/201924598-6f821b2d-4042-47cb-8315-6b042ffa08f5.jpg)
+
+One of the possible icons
+https://www.vectorstock.com/royalty-free-vector/astronaut-in-spacesuit-play-guitar-sketch-vector-27673548
+
+
+
