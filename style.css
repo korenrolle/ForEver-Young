@@ -2,9 +2,38 @@
   border: solid;
   height: 125px;
   width: 125px;
-  border-radius: 75px;
+  border-radius: 50px;
   display: flex;
-  
+  flex-direction: column;
+  text-align: center;
+  font-size: 90px;
+  animation: scroll 1s 1s linear backwards;
+}
+@keyframes scroll {
+  to{
+    transform: translateY((calc(var(--ch))));
+  }
+}
+  /* .box{
+    border: solid;
+    height: 125px;
+    width: 125px;
+    border-radius: 50px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 90px;
+  }
+    .box3{
+      border: solid;
+      height: 125px;
+      width: 125px;
+      border-radius: 50px;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      font-size: 90px;
+       */
 }
 h1 {
   display: flex;
@@ -13,4 +42,10 @@ h1 {
 h2{
   display: flex;
   justify-content: center;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
