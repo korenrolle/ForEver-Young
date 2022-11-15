@@ -1,0 +1,16 @@
+.box{
+  border: solid;
+  height: 125px;
+  width: 125px;
+  border-radius: 75px;
+  display: flex;
+  
+}
+h1 {
+  display: flex;
+  justify-content: center;
+}
+h2{
+  display: flex;
+  justify-content: center;
+}
