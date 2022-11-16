@@ -1,3 +1,33 @@
+// targets - form & subtotal
+const form = document.querySelector('#form');
+const userInput = document.querySelector('#userInput');
+const subtotal = document.querySelector('.sumNumber');
+// state / model / global values
+
+// dom update & logic / view
+function updateSubtotal(num) {
+  subtotal.textContent = num;
+}
+
+// handler / controller
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  let subValue = Number(subtotal.textContent);
+  // grab the current subtotal
+  const newValue = Number(userInput.value);
+  // grab the value of the user input
+
+  subValue -= newValue;
+  // invoke updateSubtotal to update display
+
+  updateSubtotal(subValue);
+
+  this.reset();
+  // Alternative Syntax:
+  // you can access values from dom elements in a form by accessing the target's elements property.
+  console.log(e.target.elements.numInput.value);
+  // elements.input - looks for an input field with the name numInput
+});
 let firstSpace = document.getElementById('square1');
 let secondSpace = document.getElementById('square2');
 let thirdSpace = document.getElementById('square3');
@@ -42,23 +72,28 @@ btn.addEventListener('click', () => {
   console.log(secondSpace);
   console.log(thirdSpace);
 
-  // if (firstSpace === secondSpace) {
-  //   for (i = 0; i < symbolChances[currentSymbol]; i++)
-  //     symbolChances[symbolChances.length] = symbols[currentSymbol];
-  //   currentsymbol++;
-  //       row.className = 'noClick1';
-  //       row.innerHTML = player1;
-  //       win();
-  //       currentChoice = 2;
-  //       winner1.push(index);
-  // console.log('winner1');
-  //     } else if (currentChoice == 2) {
-  //       row.className = 'noClick2';
-  //       row.innerHTML = player2;
-  //       win();
-  //       currentChoice = 1;
-  //       winner2.push(index);
-  //       console.log(winner2);
-  //     }
-  //   });
+  if (
+    firstSpace.innerHTML === secondSpace.innerHTML &&
+    firstSpace.innerHTML === thirdSpace.innerHTML
+  ) {
+    console.log('I win');
+  }
+  //     for (i = 0; i < symbolChances[currentSymbol]; i++)
+  //       symbolChances[symbolChances.length] = symbols[currentSymbol];
+  //     currentsymbol++;
+  //         row.className = 'noClick1';
+  //         row.innerHTML = player1;
+  //         win();
+  //         currentChoice = 2;
+  //         winner1.push(index);
+  //   console.log('winner1');
+  //       } else if (currentChoice == 2) {
+  //         row.className = 'noClick2';
+  //         row.innerHTML = player2;
+  //         win();
+  //         currentChoice = 1;
+  //         winner2.push(index);
+  //         console.log(winner2);
+  //       }
+  //     });
 });
