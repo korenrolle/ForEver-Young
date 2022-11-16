@@ -1,33 +1,21 @@
-// targets - form & subtotal
-const form = document.querySelector('#form');
-const userInput = document.querySelector('#userInput');
-const subtotal = document.querySelector('.sumNumber');
-// state / model / global values
+// // const subtractBtn = document.getElementById('subtract'),
+//     numberPlace = document.getElementById('numberPlace'),
+//     number = 0, /// number value
+//     min = 1, /// min number
 
-// dom update & logic / view
-function updateSubtotal(num) {
-  subtotal.textContent = num;
-}
-
-// handler / controller
-form.addEventListener('submit', function (e) {
-  e.preventDefault();
-  let subValue = Number(subtotal.textContent);
-  // grab the current subtotal
-  const newValue = Number(userInput.value);
-  // grab the value of the user input
-
-  subValue -= newValue;
-  // invoke updateSubtotal to update display
-
-  updateSubtotal(subValue);
-
-  this.reset();
-  // Alternative Syntax:
-  // you can access values from dom elements in a form by accessing the target's elements property.
-  console.log(e.target.elements.numInput.value);
-  // elements.input - looks for an input field with the name numInput
-});
+//   subtractBtn.onclick = function () {
+//     if (number > min) {
+//       number = number - 10000; /// Minus 1 of the number
+//       numberPlace.innerText = number; /// Display the value in place of the number
+//     }
+//     if (numberPlace < 10000) {
+//       console.log("Your out of Money")
+//       // numberPlace.style.color = 'red';
+//       // setTimeout(function () {
+//       //   numberPlace.style.color = 'black';
+//       // }, 500);
+//   };
+// };
 let firstSpace = document.getElementById('square1');
 let secondSpace = document.getElementById('square2');
 let thirdSpace = document.getElementById('square3');
@@ -54,6 +42,7 @@ thirdSpace.innerHTML = randomNumber;
 //   Math.random() * 13
 // ));
 // const symbols = [];
+let milliondollarvariable = 1000000;
 const screen = document.querySelectorAll('.box');
 const btn = document.querySelector('.spinner');
 const screenArr = Array.from(screen);
@@ -64,13 +53,26 @@ function getRandom() {
   console.log();
   document.getElementById('square3').innerHTML = Math.floor(Math.random() * 13);
   console.log();
+  milliondollarvariable = milliondollarvariable - 10000;
 }
 getRandom();
 btn.addEventListener('click', () => {
-  getRandom();
-  console.log(firstSpace);
-  console.log(secondSpace);
-  console.log(thirdSpace);
+  (numberPlace = document.getElementById('numberPlace')), getRandom();
+  milliondollarvariable - 10000;
+  numberPlace.innerHTML = milliondollarvariable;
+
+  // number = 0, /// number value
+  // min = 1, /// min number
+  // if (number > min) {
+  //   number = number - 10000; /// Minus 1 of the number
+  //   numberPlace.innerText = number; /// Display the value in place of the number
+  // }
+  // if (numberPlace < 10000) {
+  //   console.log('Your out of Money');
+  // }
+  // console.log(firstSpace);
+  // console.log(secondSpace);
+  // console.log(thirdSpace);
 
   if (
     firstSpace.innerHTML === secondSpace.innerHTML &&
@@ -78,7 +80,10 @@ btn.addEventListener('click', () => {
   ) {
     console.log('I win');
   }
-  //     for (i = 0; i < symbolChances[currentSymbol]; i++)
+  // if (milliondollarvariable < 10000) {
+  //   return OutOfMoney()
+  // }
+  // //     for (i = 0; i < symbolChances[currentSymbol]; i++)
   //       symbolChances[symbolChances.length] = symbols[currentSymbol];
   //     currentsymbol++;
   //         row.className = 'noClick1';
