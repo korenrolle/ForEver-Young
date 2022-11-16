@@ -21,7 +21,7 @@ let secondSpace = document.getElementById('square2');
 let thirdSpace = document.getElementById('square3');
 let randomNumber = Math.floor(Math.random() * 13);
 
-// const symbols = '';
+const symbols = '🧸','🎈', '🧪', '🌡',' 🦠',' 🧬', '💊', '💸', '🖍', '📟','⏳', '📸' ; 
 // const symbolChances = [2, 3, 1, 4];
 // const totalChances = eval(symbolChances.join('+')); //get total weight (in this case, 10)
 // const symbolsArr = new Array(); //new array for symbols
@@ -35,12 +35,6 @@ let randomNumber = Math.floor(Math.random() * 13);
 firstSpace.innerHTML = randomNumber;
 secondSpace.innerHTML = randomNumber;
 thirdSpace.innerHTML = randomNumber;
-// let secondSpace = (document.getElementById('square2').innerHTML = Math.floor(
-//   Math.random() * 13
-// ));
-// let thirdSpace = (document.getElementById('square3').innerHTML = Math.floor(
-//   Math.random() * 13
-// ));
 // const symbols = [];
 let milliondollarvariable = 1000000;
 const screen = document.querySelectorAll('.box');
@@ -60,13 +54,11 @@ function getRandom() {
 
   document.getElementById('square3').innerHTML = Math.floor(Math.random() * 13);
   console.log();
-
-  milliondollarvariable = milliondollarvariable - 10000;
 }
 getRandom();
 btn.addEventListener('click', () => {
   (numberPlace = document.getElementById('numberPlace')), getRandom();
-  milliondollarvariable - 10000;
+  milliondollarvariable = milliondollarvariable - 10000;
   numberPlace.innerHTML = milliondollarvariable;
 
   if (milliondollarvariable < 10000) {
@@ -78,7 +70,9 @@ btn.addEventListener('click', () => {
     firstSpace.innerHTML === secondSpace.innerHTML &&
     firstSpace.innerHTML === thirdSpace.innerHTML
   ) {
+    // winDisplay.innerHTML = 'Winner';
     winDisplay.innerHTML = 'Winner';
+    setInterval(winDisplay.innerHTML, 3000);
     console.log('I win');
   }
 });
@@ -102,15 +96,20 @@ postiveWord.addEventListener('click', () => {
 // console.log(secondSpace);
 // console.log(thirdSpace);
 
-betMax.addEventListener('click', () => {
-  (numberPlace = document.getElementById('numberPlace')), getRandom();
-  milliondollarvariable - 50000;
-  numberPlace.innerHTML = milliondollarvariable;
-  if (milliondollarvariable < 10000) {
-    empty.className = 'noClick';
-    empty2.className = 'noClick';
-    console.log('your out of money');
-
+betMax.addEventListener(
+  'click',
+  () => {
+    (numberPlace = document.getElementById('numberPlace')), getRandom();
+    milliondollarvariable = milliondollarvariable - 50000;
+    numberPlace.innerHTML = milliondollarvariable;
+    console.log(milliondollarvariable);
+    if (milliondollarvariable < 50000) {
+      numberPlace = milliondollarvariable;
+      milliondollarvariable = milliondollarvariable;
+      empty.className = 'noClick';
+      empty2.className = 'noClick';
+      console.log('your out of money');
+    }
     if (
       firstSpace.innerHTML === secondSpace.innerHTML &&
       firstSpace.innerHTML === thirdSpace.innerHTML
@@ -118,6 +117,7 @@ betMax.addEventListener('click', () => {
       console.log('I win');
     }
   }
+
   // //     for (i = 0; i < symbolChances[currentSymbol]; i++)
   //       symbolChances[symbolChances.length] = symbols[currentSymbol];
   //     currentsymbol++;
@@ -135,5 +135,4 @@ betMax.addEventListener('click', () => {
   //         winner2.push(index);
   //         console.log(winner2);
   //       }
-  //     });
-});
+);
