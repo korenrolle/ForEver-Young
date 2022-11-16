@@ -45,7 +45,9 @@ thirdSpace.innerHTML = randomNumber;
 let milliondollarvariable = 1000000;
 const screen = document.querySelectorAll('.box');
 const btn = document.querySelector('.spinner');
+const betMax = document.querySelector('.max');
 const screenArr = Array.from(screen);
+// function betMax
 function getRandom() {
   document.getElementById('square1').innerHTML = Math.floor(Math.random() * 13);
   console.log();
@@ -60,26 +62,30 @@ btn.addEventListener('click', () => {
   (numberPlace = document.getElementById('numberPlace')), getRandom();
   milliondollarvariable - 10000;
   numberPlace.innerHTML = milliondollarvariable;
+});
+// number = 0, /// number value
+// min = 1, /// min number
+// if (number > min) {
+//   number = number - 10000; /// Minus 1 of the number
+//   numberPlace.innerText = number; /// Display the value in place of the number
+// }
+// if (numberPlace < 10000) {
+//   console.log('Your out of Money');
+// }
+// console.log(firstSpace);
+// console.log(secondSpace);
+// console.log(thirdSpace);
 
-  // number = 0, /// number value
-  // min = 1, /// min number
-  // if (number > min) {
-  //   number = number - 10000; /// Minus 1 of the number
-  //   numberPlace.innerText = number; /// Display the value in place of the number
-  // }
-  // if (numberPlace < 10000) {
-  //   console.log('Your out of Money');
-  // }
-  // console.log(firstSpace);
-  // console.log(secondSpace);
-  // console.log(thirdSpace);
-
-  if (
-    firstSpace.innerHTML === secondSpace.innerHTML &&
-    firstSpace.innerHTML === thirdSpace.innerHTML
-  ) {
-    console.log('I win');
-  }
+if (
+  firstSpace.innerHTML === secondSpace.innerHTML &&
+  firstSpace.innerHTML === thirdSpace.innerHTML
+) {
+  console.log('I win');
+}
+betMax.addEventListener('click', () => {
+  (numberPlace = document.getElementById('numberPlace')), getRandom();
+  milliondollarvariable - 50000;
+  numberPlace.innerHTML = milliondollarvariable;
   // if (milliondollarvariable < 10000) {
   //   return OutOfMoney()
   // }
