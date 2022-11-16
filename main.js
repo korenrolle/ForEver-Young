@@ -42,12 +42,14 @@ thirdSpace.innerHTML = randomNumber;
 //   Math.random() * 13
 // ));
 // const symbols = [];
-let milliondollarvariable = 1000000;
+let milliondollarvariable = 30000;
 const screen = document.querySelectorAll('.box');
 const btn = document.querySelector('.spinner');
 const betMax = document.querySelector('.max');
 const screenArr = Array.from(screen);
-// function betMax
+const empty = document.getElementById('endGame');
+const empty2 = document.getElementById('subtract');
+
 function getRandom() {
   document.getElementById('square1').innerHTML = Math.floor(Math.random() * 13);
   console.log();
@@ -62,6 +64,11 @@ btn.addEventListener('click', () => {
   (numberPlace = document.getElementById('numberPlace')), getRandom();
   milliondollarvariable - 10000;
   numberPlace.innerHTML = milliondollarvariable;
+  if (milliondollarvariable < 10000) {
+    empty2.className = 'noClick';
+    empty.className = 'noClick';
+    console.log('your out of money');
+  }
 });
 // number = 0, /// number value
 // min = 1, /// min number
@@ -86,9 +93,11 @@ betMax.addEventListener('click', () => {
   (numberPlace = document.getElementById('numberPlace')), getRandom();
   milliondollarvariable - 50000;
   numberPlace.innerHTML = milliondollarvariable;
-  // if (milliondollarvariable < 10000) {
-  //   return OutOfMoney()
-  // }
+  if (milliondollarvariable < 10000) {
+    empty.className = 'noClick';
+    empty2.className = 'noClick';
+    console.log('your out of money');
+  }
   // //     for (i = 0; i < symbolChances[currentSymbol]; i++)
   //       symbolChances[symbolChances.length] = symbols[currentSymbol];
   //     currentsymbol++;
