@@ -42,21 +42,25 @@ thirdSpace.innerHTML = randomNumber;
 //   Math.random() * 13
 // ));
 // const symbols = [];
-let milliondollarvariable = 30000;
+let milliondollarvariable = 1000000;
 const screen = document.querySelectorAll('.box');
 const btn = document.querySelector('.spinner');
 const betMax = document.querySelector('.max');
 const screenArr = Array.from(screen);
 const empty = document.getElementById('endGame');
 const empty2 = document.getElementById('subtract');
+const postiveWord = document.getElementById('positive');
+const winDisplay = document.getElementById('win');
 
 function getRandom() {
   document.getElementById('square1').innerHTML = Math.floor(Math.random() * 13);
   console.log();
   document.getElementById('square2').innerHTML = Math.floor(Math.random() * 13);
   console.log();
+
   document.getElementById('square3').innerHTML = Math.floor(Math.random() * 13);
   console.log();
+
   milliondollarvariable = milliondollarvariable - 10000;
 }
 getRandom();
@@ -64,12 +68,27 @@ btn.addEventListener('click', () => {
   (numberPlace = document.getElementById('numberPlace')), getRandom();
   milliondollarvariable - 10000;
   numberPlace.innerHTML = milliondollarvariable;
+
   if (milliondollarvariable < 10000) {
     empty2.className = 'noClick';
     empty.className = 'noClick';
     console.log('your out of money');
   }
+  if (
+    firstSpace.innerHTML === secondSpace.innerHTML &&
+    firstSpace.innerHTML === thirdSpace.innerHTML
+  ) {
+    winDisplay.innerHTML = 'Winner';
+    console.log('I win');
+  }
 });
+
+postiveWord.addEventListener('click', () => {
+  window.alert(
+    'The way the wind blows will is consistent, the direction is not'
+  );
+});
+
 // number = 0, /// number value
 // min = 1, /// min number
 // if (number > min) {
@@ -83,12 +102,6 @@ btn.addEventListener('click', () => {
 // console.log(secondSpace);
 // console.log(thirdSpace);
 
-if (
-  firstSpace.innerHTML === secondSpace.innerHTML &&
-  firstSpace.innerHTML === thirdSpace.innerHTML
-) {
-  console.log('I win');
-}
 betMax.addEventListener('click', () => {
   (numberPlace = document.getElementById('numberPlace')), getRandom();
   milliondollarvariable - 50000;
@@ -97,6 +110,13 @@ betMax.addEventListener('click', () => {
     empty.className = 'noClick';
     empty2.className = 'noClick';
     console.log('your out of money');
+
+    if (
+      firstSpace.innerHTML === secondSpace.innerHTML &&
+      firstSpace.innerHTML === thirdSpace.innerHTML
+    ) {
+      console.log('I win');
+    }
   }
   // //     for (i = 0; i < symbolChances[currentSymbol]; i++)
   //       symbolChances[symbolChances.length] = symbols[currentSymbol];
