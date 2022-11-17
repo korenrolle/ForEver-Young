@@ -1,41 +1,40 @@
-// // const subtractBtn = document.getElementById('subtract'),
-//     numberPlace = document.getElementById('numberPlace'),
-//     number = 0, /// number value
-//     min = 1, /// min number
+const symbols = [
+  '🧸',
+  '🎈',
+  '🧪',
+  '🌡',
+  ' 🦠',
+  ' 🧬',
+  '💊',
+  '💸',
+  '🖍',
+  '📟',
+  '⏳',
+  '📸',
+  '🎙'
+];
 
-//   subtractBtn.onclick = function () {
-//     if (number > min) {
-//       number = number - 10000; /// Minus 1 of the number
-//       numberPlace.innerText = number; /// Display the value in place of the number
-//     }
-//     if (numberPlace < 10000) {
-//       console.log("Your out of Money")
-//       // numberPlace.style.color = 'red';
-//       // setTimeout(function () {
-//       //   numberPlace.style.color = 'black';
-//       // }, 500);
-//   };
-// };
 let firstSpace = document.getElementById('square1');
 let secondSpace = document.getElementById('square2');
 let thirdSpace = document.getElementById('square3');
-let randomNumber = Math.floor(Math.random() * 13);
+// let randomNumber = Math.floor(Math.random() * 13);
 
-const symbols = '🧸','🎈', '🧪', '🌡',' 🦠',' 🧬', '💊', '💸', '🖍', '📟','⏳', '📸' ; 
-// const symbolChances = [2, 3, 1, 4];
-// const totalChances = eval(symbolChances.join('+')); //get total weight (in this case, 10)
-// const symbolsArr = new Array(); //new array for symbols
-// const currentSymbol = 0;
-// while (currentSymbol < symbols.length) {
-//   //step through each fruit[] element
+// for (let i > 0; i < symbols.length; i++) {
+//   const j = Math.floor(Math.random() * (i + 1));
+//   [array[i], array[j]] = [array[j], array[i]];
 // }
-// const randomnumber = Math.floor(Math.random() * totalChances);
-// console.log(randomnumber);
+
+const randomNumber = Math.floor(Math.random() * symbols.length);
+console.log(randomNumber);
+const randomNumber2 = Math.floor(Math.random() * symbols.length);
+console.log(randomNumber2);
+const randomNumber3 = Math.floor(Math.random() * symbols.length);
+console.log(randomNumber3);
 
 firstSpace.innerHTML = randomNumber;
-secondSpace.innerHTML = randomNumber;
-thirdSpace.innerHTML = randomNumber;
-// const symbols = [];
+secondSpace.innerHTML = randomNumber2;
+thirdSpace.innerHTML = randomNumber3;
+
 let milliondollarvariable = 1000000;
 const screen = document.querySelectorAll('.box');
 const btn = document.querySelector('.spinner');
@@ -45,22 +44,23 @@ const empty = document.getElementById('endGame');
 const empty2 = document.getElementById('subtract');
 const postiveWord = document.getElementById('positive');
 const winDisplay = document.getElementById('win');
-
 function getRandom() {
-  document.getElementById('square1').innerHTML = Math.floor(Math.random() * 13);
-  console.log();
-  document.getElementById('square2').innerHTML = Math.floor(Math.random() * 13);
-  console.log();
-
-  document.getElementById('square3').innerHTML = Math.floor(Math.random() * 13);
-  console.log();
+  //   const symbolsArray = symbols.length;
+  //   for (let i = 0; i < symbols.length; i++) {
+  //     console.log(symbols[randomNumber]);
+  //     document.getElementById('square1').innerHTML = symbols[randomNumber];
+  //     document.getElementById('square2').innerHTML = symbols[randomNumber2];
+  //     document.getElementById('square3').innerHTML = symbols[randomNumber3];
+  //   }
+  document.getElementById('square1').innerHTML = symbols[randomNumber];
+  document.getElementById('square2').innerHTML = symbols[randomNumber2];
+  document.getElementById('square3').innerHTML = symbols[randomNumber3];
 }
-getRandom();
 btn.addEventListener('click', () => {
-  (numberPlace = document.getElementById('numberPlace')), getRandom();
-  milliondollarvariable = milliondollarvariable - 10000;
+  getRandom();
+  (numberPlace = document.getElementById('numberPlace')),
+    (milliondollarvariable = milliondollarvariable - 10000);
   numberPlace.innerHTML = milliondollarvariable;
-
   if (milliondollarvariable < 10000) {
     empty2.className = 'noClick';
     empty.className = 'noClick';
