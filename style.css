@@ -8,10 +8,17 @@
   text-align: center;
   font-size: 90px;
   animation: scroll 1s 1s linear backwards;
+  background-color: whitesmoke;
+  /* position: absolute; */
+  /* animation: scroll .2s infinite; */
+  animation-iteration-count: 30;
 }
 @keyframes scroll {
-  to{
-    transform: translateY((calc(var(--ch))));
+  from {
+    top: -100%;
+  }
+  to {
+    top: 100%
   }
 }
   /* .box{
@@ -47,9 +54,17 @@ h2{
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  
 }
 
 .noClick {
   pointer-events: none;
   
 }
+/* .box-container {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  position: ;
+  background-color: rgba(240, 200, 6, .2);
+} */

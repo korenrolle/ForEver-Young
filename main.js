@@ -1,10 +1,10 @@
 const symbols = [
   '🧸',
-  '🎈',
-  '🧪',
-  '🌡',
-  ' 🦠',
-  ' 🧬',
+  '🧸',
+  '🧸',
+  '🧸',
+  '🧸',
+  '🧸',
   '💊',
   '💸',
   '🖍',
@@ -24,16 +24,12 @@ let thirdSpace = document.getElementById('square3');
 //   [array[i], array[j]] = [array[j], array[i]];
 // }
 
-const randomNumber = Math.floor(Math.random() * symbols.length);
-console.log(randomNumber);
-const randomNumber2 = Math.floor(Math.random() * symbols.length);
+let randomNumber = Math.floor(Math.random() * symbols.length);
+console.log(symbols);
+let randomNumber2 = Math.floor(Math.random() * symbols.length);
 console.log(randomNumber2);
-const randomNumber3 = Math.floor(Math.random() * symbols.length);
+let randomNumber3 = Math.floor(Math.random() * symbols.length);
 console.log(randomNumber3);
-
-firstSpace.innerHTML = randomNumber;
-secondSpace.innerHTML = randomNumber2;
-thirdSpace.innerHTML = randomNumber3;
 
 let milliondollarvariable = 1000000;
 const screen = document.querySelectorAll('.box');
@@ -45,18 +41,25 @@ const empty2 = document.getElementById('subtract');
 const postiveWord = document.getElementById('positive');
 const winDisplay = document.getElementById('win');
 function getRandom() {
-  //   const symbolsArray = symbols.length;
-  //   for (let i = 0; i < symbols.length; i++) {
-  //     console.log(symbols[randomNumber]);
-  //     document.getElementById('square1').innerHTML = symbols[randomNumber];
-  //     document.getElementById('square2').innerHTML = symbols[randomNumber2];
-  //     document.getElementById('square3').innerHTML = symbols[randomNumber3];
-  //   }
-  document.getElementById('square1').innerHTML = symbols[randomNumber];
-  document.getElementById('square2').innerHTML = symbols[randomNumber2];
-  document.getElementById('square3').innerHTML = symbols[randomNumber3];
+  // s = Math.floor(Math.random() * symbols.length);
 }
 btn.addEventListener('click', () => {
+  randomNumber = Math.floor(Math.random() * symbols.length);
+  console.log(symbols);
+  randomNumber2 = Math.floor(Math.random() * symbols.length);
+  console.log(randomNumber2);
+  randomNumber3 = Math.floor(Math.random() * symbols.length);
+  console.log(randomNumber3);
+  const s = symbols[randomNumber];
+  const j = symbols[randomNumber2];
+  const n = symbols[randomNumber3];
+  for (let i = 0; i < symbols.length; i++) console.log(s);
+  firstSpace.innerHTML = s;
+  secondSpace.innerHTML = j;
+  thirdSpace.innerHTML = n;
+
+  console.log(j);
+  console.log(n);
   getRandom();
   (numberPlace = document.getElementById('numberPlace')),
     (milliondollarvariable = milliondollarvariable - 10000);
@@ -72,7 +75,7 @@ btn.addEventListener('click', () => {
   ) {
     // winDisplay.innerHTML = 'Winner';
     winDisplay.innerHTML = 'Winner';
-    setInterval(winDisplay.innerHTML, 3000);
+
     console.log('I win');
   }
 });
@@ -99,7 +102,19 @@ postiveWord.addEventListener('click', () => {
 betMax.addEventListener(
   'click',
   () => {
-    (numberPlace = document.getElementById('numberPlace')), getRandom();
+    randomNumber = Math.floor(Math.random() * symbols.length);
+    console.log(symbols);
+    randomNumber2 = Math.floor(Math.random() * symbols.length);
+    console.log(randomNumber2);
+    randomNumber3 = Math.floor(Math.random() * symbols.length);
+    console.log(randomNumber3);
+    const s = symbols[randomNumber];
+    const j = symbols[randomNumber2];
+    const n = symbols[randomNumber3];
+    for (let i = 0; i < symbols.length; i++) console.log(s);
+    firstSpace.innerHTML = s;
+    secondSpace.innerHTML = j;
+    thirdSpace.innerHTML = n;
     milliondollarvariable = milliondollarvariable - 50000;
     numberPlace.innerHTML = milliondollarvariable;
     console.log(milliondollarvariable);
