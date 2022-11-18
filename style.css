@@ -1,3 +1,7 @@
+*{
+  box-sizing: border-box;
+  background-color: aquamarine;
+}
 .box{
   border: solid;
   height: 125px;
@@ -7,11 +11,6 @@
   flex-direction: column;
   text-align: center;
   font-size: 90px;
-  animation: scroll 1s 1s linear backwards;
-  background-color: whitesmoke;
-  /* position: absolute; */
-  /* animation: scroll .2s infinite; */
-  animation-iteration-count: 30;
 }
 @keyframes scroll {
   from {
@@ -54,6 +53,7 @@ h2{
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  
   
 }
 

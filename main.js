@@ -1,17 +1,314 @@
 const symbols = [
-  '🧸',
-  '🧸',
-  '🧸',
-  '🧸',
-  '🧸',
-  '🧸',
-  '💊',
-  '💸',
-  '🖍',
-  '📟',
-  '⏳',
   '📸',
-  '🎙'
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸',
+  '📸', // <= one thousand
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟',
+  '📟', // <= twenty-five hundred
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍',
+  '🖍', //<= five thousand
+  '🧸',
+  '🧸',
+  '🧸',
+  '🧸',
+  '🧸',
+  '🧸',
+  '🧸',
+  '🧸',
+  '🧸',
+  '🧸',
+  '🧸',
+  '🧸',
+  '🧸',
+  '🧸',
+  '🧸',
+  '🧸',
+  '🧸',
+  '🧸',
+  '🧸',
+  '🧸',
+  '🧸',
+  '🧸',
+  '🧸',
+  '🧸',
+  '🧸', //<= ten Thousand
+  '🎈',
+  '🎈',
+  '🎈',
+  '🎈',
+  '🎈',
+  '🎈',
+  '🎈',
+  '🎈',
+  '🎈',
+  '🎈',
+  '🎈',
+  '🎈',
+  '🎈',
+  '🎈', // <= twenty thousand
+  '🧪',
+  '🧪',
+  '🧪',
+  '🧪',
+  '🧪',
+  '🧪',
+  '🧪',
+  '🧪',
+  '🧪',
+  '🧪',
+  '🧪', // <= thirty thousand
+  '🌡',
+  '🌡',
+  '🌡',
+  '🌡',
+  '🌡',
+  '🌡',
+  '🌡',
+  '🌡',
+  '🌡',
+  '🌡',
+  '🌡',
+  '🌡', // <= forty thousand
+  ' 🦠',
+  ' 🦠',
+  ' 🦠',
+  ' 🦠',
+  ' 🦠',
+  ' 🦠',
+  ' 🦠',
+  ' 🦠',
+  ' 🦠', //<= fifty thousand
+  ' 🧬',
+  ' 🧬',
+  ' 🧬',
+  ' 🧬',
+  ' 🧬',
+  ' 🧬',
+  ' 🧬',
+  ' 🧬', // <= oneHundred thousand
+  '💊',
+  '💊',
+  '💊',
+  '💊',
+  '💊',
+  '💊',
+  '💊', //<= five-hundred thousand
+  '💸',
+  '💸',
+  '💸',
+  '💸',
+  '💸',
+  '💸',
+  '💸', //<= small jackpot = seven-hundred fifty thousand
+  '⏳', // <= Jackpot = 1 million
+  '🎙' // <= mega Jackpot
 ];
 
 let firstSpace = document.getElementById('square1');
@@ -99,55 +396,59 @@ postiveWord.addEventListener('click', () => {
 // console.log(secondSpace);
 // console.log(thirdSpace);
 
-betMax.addEventListener(
-  'click',
-  () => {
-    randomNumber = Math.floor(Math.random() * symbols.length);
-    console.log(symbols);
-    randomNumber2 = Math.floor(Math.random() * symbols.length);
-    console.log(randomNumber2);
-    randomNumber3 = Math.floor(Math.random() * symbols.length);
-    console.log(randomNumber3);
-    const s = symbols[randomNumber];
-    const j = symbols[randomNumber2];
-    const n = symbols[randomNumber3];
-    for (let i = 0; i < symbols.length; i++) console.log(s);
-    firstSpace.innerHTML = s;
-    secondSpace.innerHTML = j;
-    thirdSpace.innerHTML = n;
-    milliondollarvariable = milliondollarvariable - 50000;
-    numberPlace.innerHTML = milliondollarvariable;
-    console.log(milliondollarvariable);
-    if (milliondollarvariable < 50000) {
-      numberPlace = milliondollarvariable;
-      milliondollarvariable = milliondollarvariable;
-      empty.className = 'noClick';
-      empty2.className = 'noClick';
-      console.log('your out of money');
-    }
-    if (
-      firstSpace.innerHTML === secondSpace.innerHTML &&
-      firstSpace.innerHTML === thirdSpace.innerHTML
-    ) {
-      console.log('I win');
-    }
+betMax.addEventListener('click', () => {
+  randomNumber = Math.floor(Math.random() * symbols.length);
+  console.log(symbols);
+  randomNumber2 = Math.floor(Math.random() * symbols.length);
+  console.log(randomNumber2);
+  randomNumber3 = Math.floor(Math.random() * symbols.length);
+  console.log(randomNumber3);
+  const s = symbols[randomNumber];
+  const j = symbols[randomNumber2];
+  const n = symbols[randomNumber3];
+  for (let i = 0; i < symbols.length; i++) console.log(s);
+  firstSpace.innerHTML = s;
+  secondSpace.innerHTML = j;
+  thirdSpace.innerHTML = n;
+  milliondollarvariable = milliondollarvariable - 50000;
+  numberPlace.innerHTML = milliondollarvariable;
+  console.log(milliondollarvariable);
+  if (milliondollarvariable < 50000) {
+    numberPlace = milliondollarvariable;
+    milliondollarvariable = milliondollarvariable;
+    empty.className = 'noClick';
+    empty2.className = 'noClick';
+    console.log('your out of money');
   }
+  if (s === j && s === n && s === '📸') {
+    milliondollarvariable = milliondollarvariable + 1000;
+  }
+  {
+    console.log('I win');
+  }
+  if (
+    firstSpace.innerHTML === secondSpace.innerHTML &&
+    firstSpace.innerHTML === thirdSpace.innerHTML &&
+    firstSpace === '📸'
+  ) {
+    milliondollarvariable = milliondollarvariable + 1000;
+  }
+});
 
-  // //     for (i = 0; i < symbolChances[currentSymbol]; i++)
-  //       symbolChances[symbolChances.length] = symbols[currentSymbol];
-  //     currentsymbol++;
-  //         row.className = 'noClick1';
-  //         row.innerHTML = player1;
-  //         win();
-  //         currentChoice = 2;
-  //         winner1.push(index);
-  //   console.log('winner1');
-  //       } else if (currentChoice == 2) {
-  //         row.className = 'noClick2';
-  //         row.innerHTML = player2;
-  //         win();
-  //         currentChoice = 1;
-  //         winner2.push(index);
-  //         console.log(winner2);
-  //       }
-);
+// //     for (i = 0; i < symbolChances[currentSymbol]; i++)
+//       symbolChances[symbolChances.length] = symbols[currentSymbol];
+//     currentsymbol++;
+//         row.className = 'noClick1';
+//         row.innerHTML = player1;
+//         win();
+//         currentChoice = 2;
+//         winner1.push(index);
+//   console.log('winner1');
+//       } else if (currentChoice == 2) {
+//         row.className = 'noClick2';
+//         row.innerHTML = player2;
+//         win();
+//         currentChoice = 1;
+//         winner2.push(index);
+//         console.log(winner2);
+//       }
