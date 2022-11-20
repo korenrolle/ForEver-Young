@@ -1,31 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900&display=swap');
 body {
-  background-image: url(https://64.media.tumblr.com/6d4dbe73e1b724b4938c1ab629d024ba/tumblr_oqhpjqM1Zh1sgtytdo1_640.gif);
-  background-position: center;
+  background-image: url(https://www.kotaku.com.au/wp-content/uploads/sites/3/2013/05/17/18nv05wy6d497gif.gif?quality=80&resize=832,468);
 background-repeat: no-repeat;
+background-size: cover;
+font-family: 'Poppins', sans-serif;
 }
 .box{
   border: solid;
-  height: 125px;
-  width: 125px;
-  border-radius: 50px;
+  height: 120px;
+  width: 120px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   text-align: center;
   font-size: 90px;
-  /* margin-left: 10px; */
-  animation: scroll .10s infinite;
-  animation-iteration-count: 40;
+  margin-left: 10px; 
+  margin-right: 10px;
+  background-color: whitesmoke; 
+  /* animation: scroll .10s;
+  animation-iteration-count: 10;
+  position: absolute; */
+
+}
+
+.box2{
+  border: solid;
+  height: 120px;
+  width: 120px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 90px;
+  margin-left: 10px; 
+  margin-right: 10px;
+  animation: scroll .10s;
+  animation-iteration-count: 10;
   position: absolute;
   background-color: whitesmoke;
 }
-@keyframes scroll {
-  from {
-    top: -100%;
-  }
-  to {
-    top: 100%
-  }
-}
+/* #space1 {
+  animation: scroll .10s infinite;
+  animation-iteration-count: 40;
+  position: absolute;
+  background-color: whitesmoke;ß
+} */
+
   /* .box{
     border: solid;
     height: 125px;
@@ -49,6 +69,7 @@ background-repeat: no-repeat;
 h1 {
   display: flex;
   justify-content: center;
+  
 }
 h2{
   display: flex;
@@ -61,8 +82,7 @@ h2{
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  
-  
+  margin-bottom: 100px;
   
 }
 
@@ -72,11 +92,49 @@ h2{
 }
 .box-container {
   width: 100%;
-  height: 100px;
-  overflow: hidden;
+  height: 150px;
+  overflow:hidden;
   position:relative;
-  background-color: rgba(240, 200, 6, .2);
+  /* background-color: rgba(240, 200, 6, .2); */
+  animation-name: scroll;
+  animation-duration: 2s;
+}
+@keyframes scroll {
+  from {
+    top: -100%;
+  }
+  to {
+    top: 100%
+  }
 }
 .screen {
 margin-top: 115px;
+}
+
+button {
+  background-color: white;
+  border: none;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+  background-color: #4CAF50; /* Green */
+  color: white;
+}
+.bottom {
+display: flex;
+justify-content: center;
+margin-top: 300px;
+}
+span {
+margin-left: 48%;
 }

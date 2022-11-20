@@ -350,6 +350,9 @@ btn.addEventListener('click', () => {
   const s = symbols[randomNumber];
   const j = symbols[randomNumber2];
   const n = symbols[randomNumber3];
+  firstSpace.classList.add('box2');
+  secondSpace.classList.add('box2');
+  thirdSpace.classList.add('box2');
   for (let i = 0; i < symbols.length; i++) console.log(s);
   firstSpace.innerHTML = s;
   secondSpace.innerHTML = j;
@@ -364,7 +367,7 @@ btn.addEventListener('click', () => {
   if (milliondollarvariable < 10000) {
     empty2.className = 'noClick';
     empty.className = 'noClick';
-    console.log('your out of money');
+    console.log('you are out of money');
   }
   if (
     firstSpace.innerHTML === secondSpace.innerHTML &&
@@ -372,9 +375,15 @@ btn.addEventListener('click', () => {
   ) {
     // winDisplay.innerHTML = 'Winner';
     winDisplay.innerHTML = 'Winner';
-
-    console.log('I win');
+    milliondollarvariable = milliondollarvariable + 50000;
   }
+  // if (
+  //   firstSpace.innerHTML === secondSpace.innerHTML &&
+  //   firstSpace.innerHTML === thirdSpace.innerHTML
+  // ) {
+  //   // winDisplay.innerHTML = 'Winner';
+  //   winDisplay.innerHTML = 'Winner';
+  //   milliondollarvariable = milliondollarvariable + 50000;
 });
 
 postiveWord.addEventListener('click', () => {
@@ -420,18 +429,16 @@ betMax.addEventListener('click', () => {
     empty2.className = 'noClick';
     console.log('your out of money');
   }
-  if (s === j && s === n && s === '📸') {
-    milliondollarvariable = milliondollarvariable + 1000;
-  }
-  {
-    console.log('I win');
-  }
   if (
     firstSpace.innerHTML === secondSpace.innerHTML &&
-    firstSpace.innerHTML === thirdSpace.innerHTML &&
-    firstSpace === '📸'
+    firstSpace.innerHTML === thirdSpace.innerHTML
   ) {
-    milliondollarvariable = milliondollarvariable + 1000;
+    // winDisplay.innerHTML = 'Winner';
+    winDisplay.innerHTML = 'Winner';
+    milliondollarvariable = milliondollarvariable + 50000;
+    if (firstSpace.innerHTML === '📸') {
+      console.log('yup');
+    }
   }
 });
 
