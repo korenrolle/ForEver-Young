@@ -2,28 +2,38 @@
 
 #User stories
 Use will be brought to the home screen where they will see the slot machine and a button that says play
-once the click play the box will go away and the will be preseted with the slot machine ready to be played and a starting amount of $1 million dollars
-once they hit the spin buton it will rotate the spin options on the screen for a match. The bet amount will be deducted from the starting amount
+Once the click play the box will go away and the will be preseted with the slot machine ready to be played and a starting amount of $1 million dollars
+Once they hit the spin buton it will rotate the spin options on the screen for a match. The bet amount will be deducted from the starting amount
 Once the machine is done spinning it will land on the results
-if player one something it will automatically be added to the amount they already have 
-the player will be able to keep playing the game and the calculation for the pay table will keep caculating
+If player wins it will automatically be added to the amount they already have
+The player will be able to keep playing the game and the calculation for the pay table will keep caculating
 
 ##Psuedo Code
 Load the start screen on some type of background with the game in the middle.
 There will be a start button that when click will allow you to interact with the game.
-the game will be housed in a css build
+The game will be housed in a css build
 There will be a button for payout, a button for spin, a button for paytable , and a bet max
 If you click the button for payout a box will pop up that says $xxxxx amount will be sent to your account, Thank you for playing
 If you click the spin button it will trigger the screen to spin
 If you click the paytable it will show you which ways you can win(maybe a prompt)
 If you click max it will jump to the max amount you can bet for the game
-
+There will be flashing lights as well as sound everytime they click the spin button
+Song will be forever young on click
+Once they win it will pop up winner flashing and moeny will be added to amount(will need a counter attached)
+The spin button will spin the seperate columns as to shuffle and reaveal icons
+Buttons will be a bright color and glowing and will consist of:
+Spin | Bet Max | Positive Word | Cash Out | Paytable
 
 Slot Machine Build
-![IMG_2935](https://user-images.githubusercontent.com/115126618/201924598-6f821b2d-4042-47cb-8315-6b042ffa08f5.jpg)
+[IMG_2935](https://media.istockphoto.com/id/848910292/vector/golden-slot-machine-wins-the-jackpot.jpg?s=612x612&w=is&k=20&c=N0lWvPHSnb67wSPNN0hd7CuSodco8vyt93nZWLvsAMo=)
 
 One of the possible icons
-https://www.vectorstock.com/royalty-free-vector/astronaut-in-spacesuit-play-guitar-sketch-vector-27673548
+https://www.vectorstock.com/royalty-free-vector/astronaut-in-spacesuit-play-guitar-sketch-vector-27673548 <= changed to emoji icons
 
+This project was very challenging but I am excited that I was able to push through. I learned a ton and I also understand that experience is invaluable. I failed alot and repeatedly walked off but the finished product I am proud of.
 
+The hardest thing for me was definately the scroll feature. It is still not functioning correctly but I am confident that I can get it working with more time. Another thing I struggled with was the overall css. The boxes took me for a whirl but I was able to manage.
 
+The easy part was the background of course and it was fun. Also the functions was fun. It will always feel good to see something come to life essentially.
+
+The new skills that I learned was how to essentially impliment the keyframes and animations. While im no expert. I know with alot of practice, I will be a strong skill.
