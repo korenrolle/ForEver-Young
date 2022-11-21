@@ -1,4 +1,8 @@
 # Forever Young
+ 
+ <img width="1110" alt="Screen Shot 2022-11-21 at 7 34 02 AM" src="https://user-images.githubusercontent.com/115126618/203107289-d4c7a254-fe09-421d-891b-019d715e1466.png">
+
+
 
 #User stories
 Use will be brought to the home screen where they will see the slot machine and a button that says play
