@@ -5,8 +5,17 @@ background-repeat: no-repeat;
 background-size: cover;
 font-family: 'Poppins', sans-serif;
 }
+.machine{
+background-image: url(https://i.ibb.co/r6XtJfL/Arcade-removebg-preview.png);
+height: 800px;
+width: 600px;
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+margin-left: 32%;
+}
 .box{
-  border: solid;
+  /* border: solid; */
   height: 120px;
   width: 120px;
   border-radius: 10px;
@@ -16,12 +25,14 @@ font-family: 'Poppins', sans-serif;
   font-size: 90px;
   margin-left: 10px; 
   margin-right: 10px;
-  background-color: whitesmoke; 
+  /* background-color: whitesmoke;  */
   /* animation: scroll .10s;
   animation-iteration-count: 10;
   position: absolute; */
 
 }
+
+
 
 .box2{
   border: solid;
@@ -37,7 +48,7 @@ font-family: 'Poppins', sans-serif;
   animation: scroll .10s;
   animation-iteration-count: 10;
   position: absolute;
-  background-color: whitesmoke;
+  /* background-color: whitesmoke; */
 }
 /* #space1 {
   animation: scroll .10s infinite;
@@ -82,7 +93,8 @@ h2{
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
+  padding-top: 300px;
   
 }
 
@@ -108,14 +120,14 @@ h2{
   }
 }
 .screen {
-margin-top: 115px;
+margin-top: px;
 }
 
 button {
   background-color: white;
   border: none;
   color: black;
-  padding: 15px 32px;
+  padding: 10px 20px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
@@ -123,6 +135,7 @@ button {
   margin: 4px 2px;
   cursor: pointer;
   transition-duration: 0.4s;
+  margin-top: 50px;
 }
 
 button:hover {
@@ -133,8 +146,18 @@ button:hover {
 .bottom {
 display: flex;
 justify-content: center;
-margin-top: 300px;
+margin-top: 100px;
 }
 span {
-margin-left: 48%;
+margin-left: 14%;
+color: aliceblue;
+}
+.counter{
+  width: 100px;
+  height: 100px;
+  margin-left: 50px;
+  margin-bottom: 100px;
+}
+#win{
+  color: antiquewhite;
 }

@@ -332,13 +332,15 @@ let milliondollarvariable = 1000000;
 const screen = document.querySelectorAll('.box');
 const btn = document.querySelector('.spinner');
 const betMax = document.querySelector('.max');
-const screenArr = Array.from(screen);
+// const screenArr = Array.from(screen);
 const empty = document.getElementById('endGame');
 const empty2 = document.getElementById('subtract');
 const postiveWord = document.getElementById('positive');
 const winDisplay = document.getElementById('win');
 function getRandom() {
-  // s = Math.floor(Math.random() * symbols.length);
+  firstSpace.classList.add('box2');
+  secondSpace.classList.add('box2');
+  thirdSpace.classList.add('box2');
 }
 btn.addEventListener('click', () => {
   randomNumber = Math.floor(Math.random() * symbols.length);
@@ -350,14 +352,10 @@ btn.addEventListener('click', () => {
   const s = symbols[randomNumber];
   const j = symbols[randomNumber2];
   const n = symbols[randomNumber3];
-  firstSpace.classList.add('box2');
-  secondSpace.classList.add('box2');
-  thirdSpace.classList.add('box2');
   for (let i = 0; i < symbols.length; i++) console.log(s);
   firstSpace.innerHTML = s;
   secondSpace.innerHTML = j;
   thirdSpace.innerHTML = n;
-
   console.log(j);
   console.log(n);
   getRandom();
@@ -387,9 +385,7 @@ btn.addEventListener('click', () => {
 });
 
 postiveWord.addEventListener('click', () => {
-  window.alert(
-    'The way the wind blows will is consistent, the direction is not'
-  );
+  window.alert('The way the wind blows is consistent, the direction is not');
 });
 
 // number = 0, /// number value
@@ -422,6 +418,9 @@ betMax.addEventListener('click', () => {
   milliondollarvariable = milliondollarvariable - 50000;
   numberPlace.innerHTML = milliondollarvariable;
   console.log(milliondollarvariable);
+  const audio = new audio('ForeverYoung');
+  audio.play();
+
   if (milliondollarvariable < 50000) {
     numberPlace = milliondollarvariable;
     milliondollarvariable = milliondollarvariable;
