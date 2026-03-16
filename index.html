@@ -2,157 +2,120 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ForEver Young</title>
+  <title>Forever Young Casino</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
 
-  <!-- Ambient particles -->
-  <div class="particles" id="particles"></div>
+  <!-- Three.js canvas fills the viewport -->
+  <canvas id="game-canvas"></canvas>
 
-  <!-- Casino header -->
-  <header class="casino-header">
-    <div class="header-lights">
-      <span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span>
-    </div>
-    <h1 class="casino-title">ForEver Young</h1>
-    <p class="casino-subtitle">For the times when you don't feel like a winner</p>
-    <div class="header-lights">
-      <span></span><span></span><span></span><span></span><span></span>
-      <span></span><span></span><span></span><span></span><span></span>
-    </div>
-  </header>
+  <!-- ═══ HUD overlay ═══════════════════════════════════════════════════════ -->
+  <div id="hud">
 
-  <!-- Main casino floor -->
-  <main class="casino-floor">
-
-    <!-- Win announcement overlay -->
-    <div class="win-overlay" id="winOverlay">
-      <div class="win-content">
-        <div class="win-emoji">🏆</div>
-        <div class="win-title" id="winTitle">WINNER!</div>
-        <div class="win-amount" id="winAmount">+$50,000</div>
-        <button class="win-close-btn" id="winCloseBtn">COLLECT</button>
-      </div>
-      <div class="confetti-container" id="confettiContainer"></div>
-    </div>
-
-    <!-- Slot Machine Cabinet -->
-    <div class="slot-cabinet">
-
-      <!-- Cabinet top with jackpot display -->
-      <div class="cabinet-top">
-        <div class="marquee-strip">
-          <span>★ JACKPOT ★ $1,000,000 ★ PLAY NOW ★ BIG WINS ★ JACKPOT ★ $1,000,000 ★ PLAY NOW ★ BIG WINS ★</span>
-        </div>
-        <div class="jackpot-display">
-          <div class="jackpot-label">MEGA JACKPOT</div>
-          <div class="jackpot-amount" id="jackpotDisplay">$1,000,000</div>
-        </div>
-        <div class="top-lights-row">
-          <div class="top-light"></div><div class="top-light"></div><div class="top-light"></div>
-          <div class="top-light"></div><div class="top-light"></div><div class="top-light"></div>
-          <div class="top-light"></div>
-        </div>
-      </div>
-
-      <!-- Reels window -->
-      <div class="reels-frame">
-        <div class="reels-glass">
-          <div class="win-line" id="winLine"></div>
-          <div class="reels-row">
-            <div class="reel-container" id="reel1">
-              <div class="reel-strip" id="strip1"></div>
-            </div>
-            <div class="reel-separator"></div>
-            <div class="reel-container" id="reel2">
-              <div class="reel-strip" id="strip2"></div>
-            </div>
-            <div class="reel-separator"></div>
-            <div class="reel-container" id="reel3">
-              <div class="reel-strip" id="strip3"></div>
-            </div>
+    <!-- TOP BAR -->
+    <div id="top-bar">
+      <!-- Rank badge -->
+      <div id="rank-badge">
+        <span id="rank-icon">🎰</span>
+        <div id="rank-info">
+          <span id="rank-name">Rookie</span>
+          <div id="xp-track">
+            <div id="xp-fill"></div>
           </div>
-          <!-- Corner screws -->
-          <div class="screw tl"></div><div class="screw tr"></div>
-          <div class="screw bl"></div><div class="screw br"></div>
+          <span id="xp-label">0 / 500 XP</span>
         </div>
       </div>
 
-      <!-- Pay table strip -->
-      <div class="pay-table-strip">
-        <div class="pay-item"><span class="pay-sym">🎙</span><span class="pay-sym">🎙</span><span class="pay-sym">🎙</span><span class="pay-val">MEGA JACKPOT $1M</span></div>
-        <div class="pay-divider">|</div>
-        <div class="pay-item"><span class="pay-sym">⏳</span><span class="pay-sym">⏳</span><span class="pay-sym">⏳</span><span class="pay-val">JACKPOT $750K</span></div>
-        <div class="pay-divider">|</div>
-        <div class="pay-item"><span class="pay-sym">💸</span><span class="pay-sym">💸</span><span class="pay-sym">💸</span><span class="pay-val">$500K</span></div>
-        <div class="pay-divider">|</div>
-        <div class="pay-item"><span class="pay-sym">💊</span><span class="pay-sym">💊</span><span class="pay-sym">💊</span><span class="pay-val">$100K</span></div>
+      <!-- Balance -->
+      <div id="balance-panel">
+        <div class="panel-label">BALANCE</div>
+        <div id="balance-val">$10,000</div>
       </div>
 
-      <!-- Info panel -->
-      <div class="info-panel">
-        <div class="info-card balance-card">
-          <div class="info-label">BALANCE</div>
-          <div class="info-value" id="numberPlace">$1,000,000</div>
+      <!-- Jackpot ticker -->
+      <div id="jackpot-panel">
+        <div class="panel-label">JACKPOT</div>
+        <div id="jackpot-val">$10,000,000</div>
+      </div>
+    </div>
+
+    <!-- BOTTOM CONTROLS -->
+    <div id="bottom-bar">
+      <!-- Bet control -->
+      <div id="bet-control">
+        <button class="icon-btn" id="bet-down">&#8722;</button>
+        <div id="bet-info">
+          <div class="panel-label">BET</div>
+          <div id="bet-val">$100</div>
         </div>
-        <div class="info-card bet-card">
-          <div class="info-label">BET</div>
-          <div class="info-value" id="currentBet">$10,000</div>
-        </div>
-        <div class="info-card win-card">
-          <div class="info-label">LAST WIN</div>
-          <div class="info-value" id="lastWin">$0</div>
-        </div>
+        <button class="icon-btn" id="bet-up">&#43;</button>
       </div>
 
-      <!-- Bet selector -->
-      <div class="bet-selector">
-        <button class="bet-option" data-bet="1000">$1K</button>
-        <button class="bet-option active" data-bet="10000">$10K</button>
-        <button class="bet-option" data-bet="50000">$50K</button>
-        <button class="bet-option" data-bet="100000">$100K</button>
+      <!-- SPIN button -->
+      <button id="spin-btn">
+        <span class="spin-icon">🎰</span>
+        <span class="spin-label">SPIN</span>
+      </button>
+
+      <!-- Max bet -->
+      <button id="max-btn">MAX BET</button>
+
+      <!-- Daily bonus -->
+      <button id="daily-btn">Daily Bonus</button>
+
+      <!-- Sound toggle -->
+      <button id="sound-btn" title="Toggle sound">🔊</button>
+
+      <!-- Stats toggle -->
+      <button id="stats-btn" title="Stats">📊</button>
+    </div>
+
+    <!-- STATS PANEL (slide-in from right) -->
+    <div id="stats-panel" class="hidden">
+      <h3>Your Stats</h3>
+      <div class="stat-row"><span>Total Spins</span><span id="st-spins">0</span></div>
+      <div class="stat-row"><span>Total Wins</span><span id="st-wins">0</span></div>
+      <div class="stat-row"><span>Biggest Win</span><span id="st-biggest">$0</span></div>
+      <div class="stat-row"><span>XP Earned</span><span id="st-xp">0</span></div>
+      <hr />
+      <h4>Rank Ladder</h4>
+      <div id="rank-ladder"></div>
+      <button id="stats-close">Close</button>
+    </div>
+
+    <!-- TOAST message -->
+    <div id="toast"></div>
+
+    <!-- WIN OVERLAY -->
+    <div id="win-overlay">
+      <div id="win-box">
+        <div id="win-emoji">🏆</div>
+        <div id="win-title">WINNER!</div>
+        <div id="win-amount">+$0</div>
+        <div id="win-xp-gain"></div>
+        <button id="win-close">COLLECT</button>
       </div>
+      <div id="confetti-layer"></div>
+    </div>
 
-      <!-- Control panel -->
-      <div class="control-panel">
-        <button class="ctrl-btn positive-btn" id="positive">
-          <span class="btn-icon">✨</span>
-          <span class="btn-label">Fortune</span>
-        </button>
-        <button class="ctrl-btn spin-btn" id="subtract">
-          <span class="btn-icon">🎰</span>
-          <span class="btn-label">SPIN</span>
-        </button>
-        <button class="ctrl-btn max-btn" id="endGame">
-          <span class="btn-icon">🔥</span>
-          <span class="btn-label">BET MAX</span>
-        </button>
+    <!-- RANK-UP MODAL -->
+    <div id="rankup-modal">
+      <div id="rankup-box">
+        <div id="rankup-sparkle">✨</div>
+        <div id="rankup-title">RANK UP!</div>
+        <div id="rankup-new"></div>
+        <div id="rankup-reward"></div>
+        <button id="rankup-close">CLAIM</button>
       </div>
+    </div>
 
-      <!-- Side lights -->
-      <div class="side-lights left-lights">
-        <div class="side-light"></div><div class="side-light"></div><div class="side-light"></div>
-        <div class="side-light"></div><div class="side-light"></div><div class="side-light"></div>
-      </div>
-      <div class="side-lights right-lights">
-        <div class="side-light"></div><div class="side-light"></div><div class="side-light"></div>
-        <div class="side-light"></div><div class="side-light"></div><div class="side-light"></div>
-      </div>
+  </div><!-- end #hud -->
 
-    </div><!-- end slot-cabinet -->
-
-    <!-- Fortune message -->
-    <div class="fortune-display" id="fortuneDisplay"></div>
-
-  </main>
-
-  <script src="./main.js" defer></script>
+  <script type="module" src="./main.js"></script>
 </body>
 </html>
