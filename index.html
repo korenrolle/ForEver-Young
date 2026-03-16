@@ -1,39 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <link rel="stylesheet" href="./style.css" />
-    <script src="./main.js" defer></script>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ForEver Young</title>
-    <script
-      src="https://kit.fontawesome.com/536d28e1d2.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
-  <body>
-    <h1><strong>ForEver Young</strong></h1>
-    <h2><em>For the times when you don't feel like a winner</em></h2>
-    <div id="win"></div>
-    <div class="machine">
-      <div class="screen">
-        <div class="row">
-          <div class="box-container"><div class="box" id="square1"></div></div>
-          <div class="box-container"><div class="box" id="square2"></div></div>
-          <div class="box-container"><div class="box" id="square3"></div></div>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ForEver Young</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+  <!-- Ambient particles -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Casino header -->
+  <header class="casino-header">
+    <div class="header-lights">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <h1 class="casino-title">ForEver Young</h1>
+    <p class="casino-subtitle">For the times when you don't feel like a winner</p>
+    <div class="header-lights">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <!-- Main casino floor -->
+  <main class="casino-floor">
+
+    <!-- Win announcement overlay -->
+    <div class="win-overlay" id="winOverlay">
+      <div class="win-content">
+        <div class="win-emoji">🏆</div>
+        <div class="win-title" id="winTitle">WINNER!</div>
+        <div class="win-amount" id="winAmount">+$50,000</div>
+        <button class="win-close-btn" id="winCloseBtn">COLLECT</button>
+      </div>
+      <div class="confetti-container" id="confettiContainer"></div>
+    </div>
+
+    <!-- Slot Machine Cabinet -->
+    <div class="slot-cabinet">
+
+      <!-- Cabinet top with jackpot display -->
+      <div class="cabinet-top">
+        <div class="marquee-strip">
+          <span>★ JACKPOT ★ $1,000,000 ★ PLAY NOW ★ BIG WINS ★ JACKPOT ★ $1,000,000 ★ PLAY NOW ★ BIG WINS ★</span>
         </div>
-        <div class="counter">
-          <span id="numberPlace">1000000</span>
+        <div class="jackpot-display">
+          <div class="jackpot-label">MEGA JACKPOT</div>
+          <div class="jackpot-amount" id="jackpotDisplay">$1,000,000</div>
         </div>
-        <div class="bottom">
-          <button class="spinner" id="subtract">Spin</button>
-          <button class="max" id="endGame">Bet Max</button>
-          <!-- <button>Pay Table</button> -->
-          <button id="positive">Positive Word</button>
-          <!-- <button>Cash Out</button> -->
+        <div class="top-lights-row">
+          <div class="top-light"></div><div class="top-light"></div><div class="top-light"></div>
+          <div class="top-light"></div><div class="top-light"></div><div class="top-light"></div>
+          <div class="top-light"></div>
         </div>
       </div>
-    </div>
-  </body>
+
+      <!-- Reels window -->
+      <div class="reels-frame">
+        <div class="reels-glass">
+          <div class="win-line" id="winLine"></div>
+          <div class="reels-row">
+            <div class="reel-container" id="reel1">
+              <div class="reel-strip" id="strip1"></div>
+            </div>
+            <div class="reel-separator"></div>
+            <div class="reel-container" id="reel2">
+              <div class="reel-strip" id="strip2"></div>
+            </div>
+            <div class="reel-separator"></div>
+            <div class="reel-container" id="reel3">
+              <div class="reel-strip" id="strip3"></div>
+            </div>
+          </div>
+          <!-- Corner screws -->
+          <div class="screw tl"></div><div class="screw tr"></div>
+          <div class="screw bl"></div><div class="screw br"></div>
+        </div>
+      </div>
+
+      <!-- Pay table strip -->
+      <div class="pay-table-strip">
+        <div class="pay-item"><span class="pay-sym">🎙</span><span class="pay-sym">🎙</span><span class="pay-sym">🎙</span><span class="pay-val">MEGA JACKPOT $1M</span></div>
+        <div class="pay-divider">|</div>
+        <div class="pay-item"><span class="pay-sym">⏳</span><span class="pay-sym">⏳</span><span class="pay-sym">⏳</span><span class="pay-val">JACKPOT $750K</span></div>
+        <div class="pay-divider">|</div>
+        <div class="pay-item"><span class="pay-sym">💸</span><span class="pay-sym">💸</span><span class="pay-sym">💸</span><span class="pay-val">$500K</span></div>
+        <div class="pay-divider">|</div>
+        <div class="pay-item"><span class="pay-sym">💊</span><span class="pay-sym">💊</span><span class="pay-sym">💊</span><span class="pay-val">$100K</span></div>
+      </div>
+
+      <!-- Info panel -->
+      <div class="info-panel">
+        <div class="info-card balance-card">
+          <div class="info-label">BALANCE</div>
+          <div class="info-value" id="numberPlace">$1,000,000</div>
+        </div>
+        <div class="info-card bet-card">
+          <div class="info-label">BET</div>
+          <div class="info-value" id="currentBet">$10,000</div>
+        </div>
+        <div class="info-card win-card">
+          <div class="info-label">LAST WIN</div>
+          <div class="info-value" id="lastWin">$0</div>
+        </div>
+      </div>
+
+      <!-- Bet selector -->
+      <div class="bet-selector">
+        <button class="bet-option" data-bet="1000">$1K</button>
+        <button class="bet-option active" data-bet="10000">$10K</button>
+        <button class="bet-option" data-bet="50000">$50K</button>
+        <button class="bet-option" data-bet="100000">$100K</button>
+      </div>
+
+      <!-- Control panel -->
+      <div class="control-panel">
+        <button class="ctrl-btn positive-btn" id="positive">
+          <span class="btn-icon">✨</span>
+          <span class="btn-label">Fortune</span>
+        </button>
+        <button class="ctrl-btn spin-btn" id="subtract">
+          <span class="btn-icon">🎰</span>
+          <span class="btn-label">SPIN</span>
+        </button>
+        <button class="ctrl-btn max-btn" id="endGame">
+          <span class="btn-icon">🔥</span>
+          <span class="btn-label">BET MAX</span>
+        </button>
+      </div>
+
+      <!-- Side lights -->
+      <div class="side-lights left-lights">
+        <div class="side-light"></div><div class="side-light"></div><div class="side-light"></div>
+        <div class="side-light"></div><div class="side-light"></div><div class="side-light"></div>
+      </div>
+      <div class="side-lights right-lights">
+        <div class="side-light"></div><div class="side-light"></div><div class="side-light"></div>
+        <div class="side-light"></div><div class="side-light"></div><div class="side-light"></div>
+      </div>
+
+    </div><!-- end slot-cabinet -->
+
+    <!-- Fortune message -->
+    <div class="fortune-display" id="fortuneDisplay"></div>
+
+  </main>
+
+  <script src="./main.js" defer></script>
+</body>
 </html>
